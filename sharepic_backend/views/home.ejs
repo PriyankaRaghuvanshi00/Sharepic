@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+   img {
+      width: 200px;
+      height: 200px;
+      border: 3px solid black;
+      border-radius: 80%;
+   }
+</style>
+
+<body>
+   <% for(let i in obj) {%>
+      <h1>
+         <%=obj[i].userName %>
+      </h1>
+      <img src="data:image/png;base64,<%= obj[i].image %>" />
+      <button><a href="/deleteuser/<%=obj[i]._id%>">Delete</a> </button>
+      <button><a href="/edituser/<%=obj[i]._id%>">Edit</a> </button>
+      <% } %>
+</body>
+
+</html>
